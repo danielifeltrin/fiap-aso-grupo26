@@ -1,10 +1,30 @@
 # fiap-aso-grupo26
 
+## TODOS OS ARQUIVOS ESTÃO CONFIGURADOS PARA UTILIZAR O NAMESPACE mbaaso-grupo26
+PARA CRIAR O PROJETO EXECUTAR O COMANDO ABAIXO:
+
 oc new-project mbaaso-grupo26
+
+### COMANDOS PARA SUBIR O BD, APLICAÇÃO E TODAS AS DEPENDÊNCIAS:
+
+- ImageStream para salvar a imagem que será gerada:
 
 oc create -f imagestream.yml
 
+
+- BuildConfig para gerar a imagem a partir do git:
+
 oc create -f buildconfig.yml
+
+- Secret para armazenar os dados de acesso ao BD:
+
+oc create -f secret.yml
+
+- DeploymentConfig do BD: 
+
+oc create -f deploymentconfig.yml
+
+- DeploymentConfig da aplicação: 
 
 oc create -f deploymentconfig.yml
 
