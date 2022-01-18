@@ -22,7 +22,7 @@ oc create -f secret.yml
 
 - DeploymentConfig do BD: 
 
-oc create -f deploymentconfig.yml
+oc create -f db-deploymentconfig.yml
 
 - DeploymentConfig da aplicação: 
 
