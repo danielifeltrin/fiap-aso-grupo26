@@ -20,9 +20,11 @@ oc create -f buildconfig.yml
 
 oc create -f secret.yml
 
-- DeploymentConfig do BD: 
+- DeploymentConfig e Service do BD: 
 
 oc create -f db-deploymentconfig.yml
+
+oc create -f db-service.yml
 
 - DeploymentConfig, HPA, Service e Route da aplicação: 
 
