@@ -24,7 +24,7 @@ oc create -f secret.yml
 
 oc create -f db-deploymentconfig.yml
 
-- DeploymentConfig da aplicação: 
+- DeploymentConfig, HPA, Service e Route da aplicação: 
 
 oc create -f deploymentconfig.yml
 
