@@ -41,9 +41,13 @@ oc create -f route.yml
 
 ------------------------
 
-Imagem customizada:
+## Imagem customizada:
 
 https://hub.docker.com/r/dpfeltrin/fiap-aso-grupo26/tags
 
+Fazer o pull e executar:
 
+docker pull dpfeltrin/fiap-aso-grupo26:latest
+
+docker run dpfeltrin/fiap-aso-grupo26:latest
 
