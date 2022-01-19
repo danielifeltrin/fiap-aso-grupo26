@@ -39,5 +39,11 @@ oc create -f route.yml
 ------------------------
 ### O arquivo full.yml contem todos os componentes
 
+------------------------
+
+Imagem customizada:
+
+https://hub.docker.com/r/dpfeltrin/fiap-aso-grupo26/tags
+
 
 
