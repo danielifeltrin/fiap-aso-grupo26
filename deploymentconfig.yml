@@ -1,0 +1,56 @@
+kind: "DeploymentConfig"
+apiVersion: "apps.openshift.io/v1"
+metadata:
+  name: "deployment-fiap-grupo26"
+  namespace: "mbaaso-grupo26"
+spec:
+  template: 
+    metadata:
+      labels:
+        name: "deployment-fiap-grupo26"
+        app: deployment-fiap-grupo26
+    spec:
+      containers:
+        - name: "deployment-fiap-grupo26"
+          image: "openshift/blog-django-py-git"
+          ports:
+            - containerPort: 8080
+              protocol: "TCP"
+          env:
+            - name: "BLOG_SITE_NAME"
+              value: "Trabalho FIAP Grupo 26"
+            - name: "BLOG_BANNER_COLOR"
+              value: "purple"
+            - name: DATABASE_HOST
+              value: service-database-fiap-grupo26
+            - name: DATABASE_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: secret-fiap-grupo26
+                  key: database
+            - name: DATABASE_USER
+              valueFrom:
+                secretKeyRef:
+                  name: secret-fiap-grupo26
+                  key: username
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: secret-fiap-grupo26
+                  key: password
+  replicas: 1 
+  triggers:
+    - type: "ConfigChange" 
+    - type: "ImageChange" 
+      imageChangeParams:
+        automatic: true
+        containerNames:
+          - "deployment-fiap-grupo26"
+        from:
+          kind: "ImageStreamTag"
+          name: "blog-django-py-git:latest"
+  strategy: 
+    type: "Rolling"
+  paused: false 
+  revisionHistoryLimit: 2 
+  minReadySeconds: 0 

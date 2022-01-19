@@ -1,0 +1,24 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: "build-fiap-grupo26"
+spec:
+  runPolicy: "Serial" 
+  triggers:
+    - type: "ImageChange"
+      imageChange: {}
+    - type: "ConfigChange"
+  source: 
+    git:
+      uri: "https://github.com/openshift-katacoda/blog-django-py.git"
+  strategy: 
+    sourceStrategy:
+      from:
+        kind: "ImageStreamTag"
+        namespace: openshift
+        name: 'python:3.8-ubi7'
+  output: 
+    to:
+      kind: "ImageStreamTag"
+      name: "blog-django-py-git:latest"
+      

@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: route-fiap-grupo26
+  namespace: mbaaso-grupo26
+spec:
+  to:
+    kind: Service
+    name: service-fiap-grupo26
+  port:
+    targetPort: 8080
