@@ -36,6 +36,8 @@ oc create -f service.yml
 
 oc create -f route.yml
 
+------------------------
+### O arquivo full.yml contem todos os componentes
 
 
 
