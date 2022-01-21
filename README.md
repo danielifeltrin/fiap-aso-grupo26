@@ -1,6 +1,6 @@
 # fiap-aso-grupo26
 
-## TODOS OS ARQUIVOS ESTÃO CONFIGURADOS PARA UTILIZAR O NAMESPACE mbaaso-grupo26
+### TODOS OS ARQUIVOS ESTÃO CONFIGURADOS PARA UTILIZAR O NAMESPACE mbaaso-grupo26
 PARA CRIAR O PROJETO EXECUTAR O COMANDO ABAIXO:
 
 oc new-project mbaaso-grupo26
@@ -38,6 +38,9 @@ oc create -f route.yml
 
 ------------------------
 ### O arquivo full.yml contem todos os componentes
+
+Para criar todos os componentes de uma vez, executar:
+oc create -f https://raw.githubusercontent.com/danielifeltrin/fiap-aso-grupo26/main/full.yml
 
 ------------------------
 
